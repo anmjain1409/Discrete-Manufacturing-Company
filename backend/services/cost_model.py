@@ -1,6 +1,3 @@
-# Simplified parametric model for PoC
-# In production: replace with ML model trained on MDL historical data
-
 DISCIPLINE_COST_FACTORS = {
     "propulsion":  {"base_usd": 2500000, "per_percent_usd": 85000},
     "structure":   {"base_usd": 180000,  "per_percent_usd": 12000},

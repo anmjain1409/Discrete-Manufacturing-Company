@@ -1,19 +1,12 @@
 from neo4j import GraphDatabase
 import os
 from dotenv import load_dotenv
-
-# ✅ Load environment variables
 load_dotenv()
-
-# ✅ Debug (optional – check if env is loaded)
 print("NEO4J_URI:", os.getenv("NEO4J_URI"))
-
-# ✅ Create driver
 driver = GraphDatabase.driver(
     os.getenv("NEO4J_URI"),
     auth=(os.getenv("NEO4J_USER"), os.getenv("NEO4J_PASSWORD"))
 )
-
 
 def get_cascade_impacts(system_id: str, max_hops: int = 3) -> list[dict]:
     with driver.session() as session:
