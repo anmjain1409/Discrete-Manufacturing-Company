@@ -25,7 +25,6 @@ def get_cascade_impacts(system_id: str, max_hops: int = 3) -> list[dict]:
         """, id=system_id)
         return [dict(r) for r in result]
 
-
 def get_class_rules_for_systems(system_ids: list[str]) -> list[dict]:
     with driver.session() as session:
         result = session.run("""
@@ -35,7 +34,6 @@ def get_class_rules_for_systems(system_ids: list[str]) -> list[dict]:
                    cr.clause AS clause, cr.description AS description
         """, ids=system_ids)
         return [dict(r) for r in result]
-
 
 def get_similar_historical_changes(keywords: list[str]) -> list[dict]:
     with driver.session() as session:
