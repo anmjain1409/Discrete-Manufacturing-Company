@@ -57,7 +57,6 @@ def extract_intent(user_message: str) -> dict:
             "keywords": ["engine", "power"]
         }
 
-
 def synthesise_report(user_query: str, impact_data: dict) -> str:
     impacts = impact_data.get("impacts", [])
     class_rules = impact_data.get("class_rules", [])
